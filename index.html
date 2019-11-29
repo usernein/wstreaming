@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Streaming do Cezar</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel='stylesheet' href='/css/style.css'>
+	</head>
+	<body>
+		<script src='/js/jquery-3.4.1.js'></script>
+		<script src='/js/cookie.js'></script>
+		<form id='form' class='container'>
+			<label for="user">Seu nome de usuário: </label>
+			<input type="text" name="user" placeholder="username" required>
+			<input type="submit" value="Enviar">
+		</form>
+		<script>
+			var user = getCookie('user');
+			if (user) {
+				$('#form input').eq(0).val(user);
+			}
+			function onsub(event){
+				event.preventDefault();
+				setCookie('user', event.target.elements.user.value, 1);
+				$.get('real_index.html', function(response) {
+					document.write(response);
+					//location.reload(true);
+				});
+				//window.location.replace(window.location.origin+'/real_index.html');
+			};
+			document.getElementById('form').onsubmit = onsub;
+		</script>
+	</body>
+</html>

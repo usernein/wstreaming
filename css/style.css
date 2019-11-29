@@ -1,0 +1,100 @@
+body {
+	background-color: #878787;
+	overflow-wrap: break-word;
+}
+
+#log {
+	background-color: #D3D3D3;
+	align: center;
+	width: 100%;
+	height: 60%;
+	font-size: 10px;
+}
+
+.center {
+	text-align: center;
+}
+
+#correct {
+	display: block;
+	width: 70%;
+	margin: 0 auto;
+}
+.blue {
+	background-color: #0800FF;
+}
+.grey {
+	background-color: #878787;
+}
+.green {
+	background-color: #00FF00;
+}
+.terminal {
+	background-color: #101010;
+	color: #DBDBDB;
+	font-family: monospace;
+}
+.container {
+	text-align: center;
+}
+#console {
+	height: auto;
+	min-height: 12px;
+	text-align: left;
+	font-size: 10px;
+	line-height: 1;
+	padding-top: 5px;
+	padding-left: 3px;
+	position: fixed;
+	bottom: 0px;
+	width: 95%;
+	margin: 0 auto;
+	overflow: scroll;
+}
+.big {
+	max-height: 250px;
+}
+.small * {
+	display: none;
+}
+.small .last {
+	display: inline-block;
+}
+.add {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.addlabel {
+	font-size: 13px;
+    font-weight: 100;
+    color: black;
+    display: inline-block;
+    margin: 0 auto;
+    width: auto;
+    margin-top: 2px;
+    padding: 1px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: red;
+}
+
+.hide {
+	display: none;
+}
+.current {
+	border: 2px solid black;
+}
+#colorbar {
+	height: 5px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: red;
+}

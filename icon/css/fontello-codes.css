@@ -1,0 +1,6 @@
+
+.icon-play:before { content: '\e800'; } /* '' */
+.icon-stop:before { content: '\e801'; } /* '' */
+.icon-arrows-cw:before { content: '\e802'; } /* '' */
+.icon-doc-text:before { content: '\f0f6'; } /* '' */
+.icon-spinner:before { content: '\f110'; } /* '' */

@@ -1,0 +1,6 @@
+post.txt
+error_log
+sound
+*.mp3
+*.m4a
+node_modules/

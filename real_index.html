@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Streaming do Cezar</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel='stylesheet' href='/css/style.css'>
+		<link rel='stylesheet' href='/icon/css/fontello.css'>
+	</head>
+	<body>
+		<div id="colorbar"></div>
+		<script src='/js/ServerDate.js'></script>
+		<audio controls="true" id="audio" preload="auto">
+			<source src='' type='audio/mpeg'>
+		</audio>
+		<form id='addform' class='container' onsubmit="return false;">
+			<input id='add' name='add' class='add' type='file' accept='audio/*'>
+			<button><label for='add' class='addlabel'><i class="fas fa-file-audio"></i> Escolher uma música</label></button>
+		</form>
+		<div id="simple-stream-player" class='container'>
+		  <!--button class="command prev" value="«" id="prev" title="prev element"></button>	
+		  <button class="command fb" value="‹" id="fb" title="fast backward"></button-->		
+		  <button class="command play" value="play" id="play" title="play"><i class="fas icon-play"></i></button>
+		  <!--button class="command ff" value="›" id="ff" title="fast forward"></button>		
+		  <button class="command next" value="»" id="next" title="next element"></button-->
+		  <button class="command sync" value="sync" id="sync" title="sync"><i class="fas icon-arrows-cw"></i></button>	
+		</div>
+		<div class='container'>
+			<div class='terminal big' id='console'></div>
+		</div>
+		
+		<div class='container' style='margin-top: 20px;'>
+			<input type='range' id='correct' min=-0.5 max=0.5 step="0.05"/>
+			<div id='correctspan' class='center'>Correção de delay</div>
+		</div>
+		
+		<script src='/js/syncTime.js'></script>
+		<script src='/js/jquery-3.4.1.js'></script>
+		<script src='/js/console.js'></script>
+		<script src="/js/howler.min.js"></script>
+		<script src='/js/cookie.js'></script>
+		<script src='/js/script.js'></script>
+	</body>
+</html>
