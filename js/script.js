@@ -5,11 +5,12 @@ user = get_cookie_or_create("user") || prompt("Digite seu nome de usuário:");
 database = {
     audio_time_point: 0,
     audio_paused: true,
-    stream_master: user,
+    stream_master: null,
     audio_source: {
         filename: "sound.mp3",
         url: "/ajax.php?serve=./sound&filename=sound.mp3",
     },
+    last_command: null,
 };
 
 last_audio_point_post = 0;
@@ -187,17 +188,17 @@ server.onmessage = function (event) {
     console.log(event.data);
 
     if (command == "BROADCAST_SET" || command == "INITIAL_SET") {
+        if ("stream_master" in data) {
+            database.stream_master = data.stream_master;
+        }
         if ("audio_time_point" in data) {
-            if (user != database.stream_master && command != "INITIAL_SET") {
+            if (user != database.stream_master || command == "INITIAL_SET") {
                 set_time(data.audio_time_point);
             }
         }
         if ("audio_paused" in data) {
             if (data.audio_paused) audioTag.pause();
             else audioTag.play();
-        }
-        if ("stream_master" in data) {
-            database.stream_master = data.stream_master;
         }
         if ("audio_source" in data) {
             if (!audioTag.paused) audioTag.pause();
@@ -219,6 +220,10 @@ server.onmessage = function (event) {
 
                 if ("audio_time_point" in data) {
                     set_time(data.audio_time_point);
+                }
+                if ("audio_paused" in data) {
+                    if (data.audio_paused) audioTag.pause();
+                    else audioTag.play();
                 }
             };
         }
