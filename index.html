@@ -3,30 +3,39 @@
 		<title>Streaming do Cezar</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel='stylesheet' href='/css/style.css'>
-	</head>
-	<body>
+		<link rel='stylesheet' href='/icon/css/fontello.css'>
 		<script src='/js/jquery-3.4.1.js'></script>
 		<script src='/js/cookie.js'></script>
-		<form id='form' class='container'>
-			<label for="user">Seu nome de usuário: </label>
-			<input type="text" name="user" placeholder="username" required>
-			<input type="submit" value="Enviar">
-		</form>
+		<script src="/js/howler.min.js"></script>
+		<script src='/js/cookie.js'></script>
+		<script src='/js/ServerDate.js'></script>
+	</head>
+	<body>
+		<div id="container">
+			<form id='form' class='container'>
+				<label for="user">Seu nome de usuário: </label>
+				<input type="text" name="user" placeholder="username" required>
+				<input type="submit" value="Enviar">
+			</form>
+		</div>
+
 		<script>
 			var user = getCookie('user');
 			if (user) {
 				$('#form input').eq(0).val(user);
 			}
-			function onsub(event){
+			function on_submit(event){
 				event.preventDefault();
 				setCookie('user', event.target.elements.user.value, 1);
 				$.get('real_index.html', function(response) {
-					document.write(response);
+					$("#container").html(response);
 					//location.reload(true);
 				});
 				//window.location.replace(window.location.origin+'/real_index.html');
 			};
-			document.getElementById('form').onsubmit = onsub;
+			document.getElementById('form').onsubmit = on_submit;
 		</script>
+		<script src="node_modules/eruda/eruda.js"></script>
+		<script>eruda.init();</script>
 	</body>
 </html>

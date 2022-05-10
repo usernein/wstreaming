@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "Python: Arquivo Atual",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "type": "pwa-chrome",
+            "name": "http://localhost:8090",
+            "request": "launch",
+            "url": "http://localhost:8090"
+        }
+    ]
+}

@@ -20,3 +20,11 @@ function getCookie(name) {
 function eraseCookie(name) {   
     document.cookie = name+'=; Max-Age=-99999999;';  
 }
+function get_cookie_or_create(name, default_value=undefined, days_to_expire=1) {
+    value = getCookie(name)
+    if (value == null && default_value != undefined) {
+        value = default_value
+        setCookie(name, value, days_to_expire)
+    }
+    return value;
+}
