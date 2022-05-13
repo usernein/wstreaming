@@ -1,7 +1,9 @@
 <h1 align="center">wstreaming</h1>
 
 🎧 Streaming de áudio via WebSockets
+
 🐍 Backend em Python
+
 🏠 Conexão local
 
 ## Modo de uso
