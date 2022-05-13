@@ -1,11 +1,13 @@
 <h1 align="center">wstreaming</h1>
 
+<img src="https://media3.giphy.com/media/ku5EcFe4PNGWA/giphy.gif" align="right"/>
+
 🎧 Streaming de áudio via WebSockets
 
 🐍 Backend em Python
 
 🏠 Conexão local
-
+<br clear="right"/>
 ## Modo de uso
 
 1. Abrir servidor web na pasta atual: `php -S 0.0.0.0:8000`
